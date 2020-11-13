@@ -7,23 +7,17 @@ const products = [
 
 
 const calculateTotalPrice = function(allProdcuts, productName) {
-  // твой код
-    let index;
+
+
     let totalPrice = 0;
             
     for (const product of allProdcuts) {
-        // console.log(product.name);
-        if (productName === product.name) {
-            // console.log(product.name);
-            index = allProdcuts.indexOf(product);
-            // console.log('val', allProdcuts[index].price);
-            totalPrice = allProdcuts[index].price *allProdcuts[index].quantity
 
+        if (productName === product.name) {
+            totalPrice = product.price *product.quantity
         }
       
     }
-
-
         return totalPrice
    
     

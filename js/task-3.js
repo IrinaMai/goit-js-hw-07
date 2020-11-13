@@ -2,15 +2,12 @@ const findBestEmployee = function(employees) {
   const values = Object.values(employees);
   let bestEmployeer = '';
 
-  // console.log('values :>> ', values);
 
   const maxValue = Math.max(...values);
-  // console.log('maxValue :>> ', maxValue);
+ 
 
   for (const key in employees) {
-    // console.log('key', key);
-    // console.log('employees[key]', employees[key]);
-
+ 
     if (employees[key] === maxValue) {
     bestEmployeer = key;
     }

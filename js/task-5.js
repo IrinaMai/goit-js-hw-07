@@ -6,17 +6,14 @@ const products = [
   { name: 'Захват', price: 1200, quantity: 2 },
 ];
 
-// console.log(products[1]['name']);
-
 const getAllPropValues = function (arr, prop) {
     const newArr = []
 
     for (const item of arr) {
-        if (item[prop] !== undefined) {
+        if (item[prop]) {
         newArr.push(item[prop])
     }
-        // console.log(item[prop]);
-
+   
     }
     return newArr
 
