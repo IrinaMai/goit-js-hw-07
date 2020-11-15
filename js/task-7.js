@@ -7,6 +7,8 @@ const Transaction = {
   WITHDRAW: 'withdraw',
 };
 
+let id = 0;
+
 /*
  * Каждая транзакция это объект со свойствами: id, type и amount
  */
