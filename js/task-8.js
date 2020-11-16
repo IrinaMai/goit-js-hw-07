@@ -3,32 +3,36 @@ const Transaction = {
   WITHDRAW: 'withdraw',
 };
 const { DEPOSIT, WITHDRAW } = Transaction;
-let id = 0;
+
 
 const account = {
   balance: 0,
+  id: 0,
   getBalance() {
     return this.balance;
   },
   transactions: [],
   getTransactions(amount, type) {
-    const trans = {
-      id,
+     const trans = {
+      id: this.id,
       amount,
       type,
     }
     this.transactions.push(trans)
   },
   getDeposit(amount) {
-    id += 1;
+    this.id += 1;
     this.balance += amount;
     this.getTransactions(amount, DEPOSIT)
-
   },
   getWithdraw(amount) {
-    id += 1;
-    this.balance -= amount;
-    this.getTransactions(amount, WITHDRAW)
+    if (this.balance >= amount) {
+      this.id += 1;
+      this.balance -= amount;
+      this.getTransactions(amount, WITHDRAW)
+    } else {
+      alert('Ooops no money')
+    }
   },
   getTransactionDetails(id) {
     for (let i = 0; i < this.transactions.length; i += 1) {
@@ -50,10 +54,11 @@ const account = {
 };
 
 
-console.log(account.getWithdraw(200));
-console.log(account.getWithdraw(150));
+// console.log(account.getWithdraw(20000));
+
 console.log(account.getDeposit(500));
 console.log(account.getDeposit(800));
+console.log(account.getWithdraw(150));
 
 console.log(account.transactions);
 console.log(account.getTransactionDetails(2));
