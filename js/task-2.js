@@ -1,26 +1,29 @@
-const inventory = {
-  items: ['Knife', 'Gas mask'],
-  add(itemName) {
-    console.log(`Adding ${itemName} to inventory`);
 
-    this.items.push(itemName);
-  },
-  remove(itemName) {
-    console.log(`Removing ${itemName} from inventory`);
+class User {
+  constructor({name, age, followers}) {
+    this.name = name;
+    this.age = age;
+    this.followers = followers;
+  }
+  getInfo() {
+    console.log(`User ${this.name} is ${this.age} years old and has ${this.followers} followers`);
+  }
 
-    this.items = this.items.filter(item => item !== itemName);
-  },
 };
 
-const invokeInventoryAction = function(itemName, action) {
-    console.log(`Invoking action on ${itemName}`);
-  
-  action(itemName);
-};
 
-/
+const mango = new User({
+  name: 'Mango',
+  age: 2,
+  followers: 20,
+});
 
-invokeInventoryAction('Medkit', inventory.add.bind(inventory));
+mango.getInfo(); // User Mango is 2 years old and has 20 followers
 
+const poly = new User({
+  name: 'Poly',
+  age: 3,
+  followers: 17,
+});
 
-invokeInventoryAction('Gas mask', inventory.remove.bind(inventory));
+poly.getInfo(); // User Poly is 3 years old and has 17 followers
