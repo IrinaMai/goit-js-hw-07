@@ -80,6 +80,7 @@ const calculateTotalBalance = users => {
 //============TASK 8======================
 const getUsersWithFriend = (users, friendName) => {
   const friends = users.filter(item => {
+    console.log(item.friends);
    return item.friends.includes(friendName)
   })
     return friends.map(({name})=> name)
@@ -92,14 +93,20 @@ const getUsersWithFriend = (users, friendName) => {
 
 //============TASK 9======================
 const getNamesSortedByFriendsCount = users => {
+  return users
+    .map(({ name, friends }) => ({ name, counter: friends.length }))
+    .sort((a, b) => a.counter - b.counter)
+    .map(item => item.name);
  
-
 };
 
 // console.log(getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 
 //'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony',
 //'Ross Vazquez' ]
+
+// Эта задача мне как-то совсем не хотела даваться(
+// покажи плиз как ее сделать проще
 
 
 //============TASK 10======================
