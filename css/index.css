@@ -1,0 +1,52 @@
+[type="button"] {
+	background-color: teal;
+	width: 100px;
+	height: 25px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.counter {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+img {
+	display: block;
+	padding: 10px;
+	/* object-fit: fill; */
+}
+
+#gallery {
+	margin-top: 25px;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#validation-input {
+	border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+	border-color: #4caf50;
+}
+
+#validation-input.invalid {
+	border-color: #f44336;
+}
+.abraCadabra {
+	display: block;
+	height: 150px;
+	margin: 50px;
+}
+.boxes {
+	display: flex;
+	/* border-color: tomato; */
+	/* width: 700px;
+	height: 500px; */
+}
+.inner__box {
+	display: block;
+	width: 10px;
+	height: 10px;
+}
