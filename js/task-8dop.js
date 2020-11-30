@@ -15,25 +15,9 @@ const refs = {
  controlsBox: document.querySelector('.controls__box'),
 }
 
-// const controlsInput = document.querySelector('.controls__input');
-// const controlsBtnRender = document.querySelector('.controls__btn_render');
-// const controlsBtnDestroy = document.querySelector('.controls__btn_destroy');
-// const controlsBox = document.querySelector('.controls__box');
 
-console.log(refs.controlsInput.value);
-
-const createBoxes = (amount) => {
-    console.log(controlsInput.value);
-    for (i = 0; i <= 100; i += 1) {
-        `<div class="inner__box" width="10" heigh="10" style="background-color: red">*10</div>`
-    }
-};
+refs.controlsBtnRender.addEventListener('click', onBtnClick)
     
-    
-controlsBox.innerHTML = `<div class="inner__box" width="10" heigh="10" style="background-color: red"></div>`
-
-
-
-controlsBtnRender.addEventListener('click', createBoxes);
-
-`<div width ='10' height= '10'></div>`
+function onBtnClick() {
+    console.log(refs.controlsInput.value);
+}

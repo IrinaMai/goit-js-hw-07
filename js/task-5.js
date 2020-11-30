@@ -6,5 +6,9 @@ const nameValurRef = document.querySelector('#name-output')
 inputRef.addEventListener('input', handelChangeName);
 
 function handelChangeName() {
-    nameValurRef.textContent = inputRef.value
+    if (!inputRef.value.length) {
+        nameValurRef.textContent = 'незнакомец';
+    } else {
+        nameValurRef.textContent = inputRef.value;
+    }
 }
